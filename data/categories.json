@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "outerwear",
+    "name": "Outerwear",
+    "tagline": "Architecture for the body",
+    "description": "Cashmere, virgin wool, and woven camel — coats and trenches engineered to fall in a single, uninterrupted line. Cut in our Florentine atelier and finished by a single hand.",
+    "hero": "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?auto=format&fit=crop&w=2000&q=80",
+    "order": 1
+  },
+  {
+    "slug": "ready-to-wear",
+    "name": "Ready-to-Wear",
+    "tagline": "Drape, restraint, intention",
+    "description": "Silk slips, fluid tailoring, and the long silhouette of the season. Garments authored for a quiet life, worn close.",
+    "hero": "https://images.unsplash.com/photo-1551803091-e20673f15770?auto=format&fit=crop&w=2000&q=80",
+    "order": 2
+  },
+  {
+    "slug": "leather-goods",
+    "name": "Leather Goods",
+    "tagline": "Patinated, slowly",
+    "description": "Vegetable-tanned in Tuscany and finished by hand. Bags and small objects shaped to weather a generation rather than a season.",
+    "hero": "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=2000&q=80",
+    "order": 3
+  },
+  {
+    "slug": "footwear",
+    "name": "Footwear",
+    "tagline": "The first line of dress",
+    "description": "Pumps, mules, and low boots built on Italian lasts. Each pair is stitched by a maker whose initials are pressed into the lining.",
+    "hero": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=2000&q=80",
+    "order": 4
+  },
+  {
+    "slug": "eyewear",
+    "name": "Eyewear",
+    "tagline": "Composure, framed",
+    "description": "Hand-polished acetate and bevelled metalwork from a Cadore workshop. Every frame is adjusted before it leaves the Maison.",
+    "hero": "https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=2000&q=80",
+    "order": 5
+  },
+  {
+    "slug": "accessories",
+    "name": "Accessories",
+    "tagline": "The final, quiet gesture",
+    "description": "Gloves, fine knits, and pieces drawn from the archive — finished by the same eleven seamstresses who tailor our outerwear.",
+    "hero": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=2000&q=80",
+    "order": 6
+  }
+]

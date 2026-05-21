@@ -1,21 +1,32 @@
 'use client';
 
-type MenuOverlayProps = {
+import Link from 'next/link';
+
+interface MenuItem {
+  label: string;
+  href: string;
+}
+
+interface MenuOverlayProps {
   open: boolean;
   onClose: () => void;
-};
+  categories: { slug: string; name: string }[];
+}
 
-const ITEMS = [
-  'Womenswear',
-  'Menswear',
-  'Leather Goods',
-  'Eyewear',
-  'Footwear',
-  'The Archive',
-  'Atelier',
+const SECONDARY: MenuItem[] = [
+  { label: 'Our Story', href: '/#atelier' },
+  { label: 'The Journal', href: '#' },
+  { label: 'Boutiques', href: '#' },
+  { label: 'Contact', href: '#' },
 ];
 
-export default function MenuOverlay({ open, onClose }: MenuOverlayProps) {
+export default function MenuOverlay({ open, onClose, categories }: MenuOverlayProps) {
+  const items: MenuItem[] = [
+    { label: 'All Collections', href: '/collections' },
+    ...categories.map((c) => ({ label: c.name, href: `/collections/${c.slug}` })),
+    { label: 'Atelier', href: '/#atelier' },
+  ];
+
   return (
     <div
       className={`fixed inset-0 z-[150] bg-ink text-paper transition-opacity duration-700 ${
@@ -30,27 +41,30 @@ export default function MenuOverlay({ open, onClose }: MenuOverlayProps) {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-12 gap-10 px-6 md:px-10 pt-12 md:pt-20">
         <ul className="md:col-span-7 space-y-3 md:space-y-5">
-          {ITEMS.map((t, i) => (
+          {items.map((item, i) => (
             <li
-              key={t}
+              key={item.label}
               className={`display text-[12vw] md:text-[7vw] leading-[1] transition-all duration-700 ${
                 open ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
               }`}
               style={{ transitionDelay: `${i * 60 + 150}ms` }}
             >
-              <a href="#" className="btn-line">
-                {i === 1 ? <em className="display-italic">{t}</em> : t}
-              </a>
+              <Link href={item.href} onClick={onClose} className="btn-line">
+                {i === 1 ? <em className="display-italic">{item.label}</em> : item.label}
+              </Link>
             </li>
           ))}
         </ul>
         <div className="md:col-span-5 md:pt-8">
           <div className="eyebrow text-paper/55 mb-6">— Maison</div>
           <ul className="space-y-3 text-[16px] text-paper/85">
-            <li><a className="btn-line" href="#">Our Story</a></li>
-            <li><a className="btn-line" href="#">The Journal</a></li>
-            <li><a className="btn-line" href="#">Boutiques</a></li>
-            <li><a className="btn-line" href="#">Contact</a></li>
+            {SECONDARY.map((item) => (
+              <li key={item.label}>
+                <Link className="btn-line" href={item.href} onClick={onClose}>
+                  {item.label}
+                </Link>
+              </li>
+            ))}
           </ul>
           <div className="mt-12 ui-label text-paper/55">
             Firenze · Paris · Milano · Kyoto

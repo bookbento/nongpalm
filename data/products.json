@@ -1,0 +1,412 @@
+[
+  {
+    "id": "a13ebd38-973d-4942-87db-b2b705b0c4ac",
+    "slug": "halcyon-trench-camel",
+    "name": "Halcyon Trench, Camel",
+    "categorySlug": "outerwear",
+    "price": { "amount": 4280, "currency": "EUR", "display": "€ 4,280" },
+    "images": [
+      {
+        "src": "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?auto=format&fit=crop&w=1600&h=2000&q=82",
+        "alt": "Halcyon Trench, Camel — front",
+        "width": 1600,
+        "height": 2000
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?auto=format&fit=crop&w=1600&h=2000&q=82&crop=entropy",
+        "alt": "Halcyon Trench, Camel — detail",
+        "width": 1600,
+        "height": 2000
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?auto=format&fit=crop&w=1600&h=2000&q=82&crop=top",
+        "alt": "Halcyon Trench, Camel — collar study",
+        "width": 1600,
+        "height": 2000
+      }
+    ],
+    "description": "A double-breasted trench drawn from a 1968 atelier sketch, cut in long-staple camel hair and finished with horn buttons turned in our Florentine workshop. The line is engineered to fall uninterrupted from shoulder to hem.",
+    "details": {
+      "composition": "92% virgin wool, 8% cashmere. Bemberg cupro lining.",
+      "care": [
+        "Dry clean only, by a specialist",
+        "Rest on a wide wooden hanger between wears",
+        "Brush with a soft natural-bristle brush"
+      ],
+      "sizing": "Cut to a true relaxed line. Order your usual European size; size down for a closer fit through the shoulders.",
+      "origin": "Made in Florence, Italy"
+    },
+    "inStock": true,
+    "featured": true,
+    "createdAt": "2026-01-12T10:00:00.000Z"
+  },
+  {
+    "id": "701a3219-3976-4d17-b49c-07418084e82e",
+    "slug": "estelle-leather-tote",
+    "name": "Estelle Leather Tote",
+    "categorySlug": "leather-goods",
+    "price": { "amount": 3120, "currency": "EUR", "display": "€ 3,120" },
+    "images": [
+      {
+        "src": "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=1600&h=2000&q=82",
+        "alt": "Estelle Leather Tote — three-quarter",
+        "width": 1600,
+        "height": 2000
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=1600&h=2000&q=82&crop=entropy",
+        "alt": "Estelle Leather Tote — interior",
+        "width": 1600,
+        "height": 2000
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=1600&h=2000&q=82&crop=bottom",
+        "alt": "Estelle Leather Tote — base detail",
+        "width": 1600,
+        "height": 2000
+      }
+    ],
+    "description": "An unstructured tote in full-grain Tuscan calfskin, vegetable-tanned over six weeks. Twin handles are saddle-stitched by a single maker whose initials are pressed inside the lining.",
+    "details": {
+      "composition": "Vegetable-tanned full-grain calfskin. Suede lining. Solid brass hardware.",
+      "care": [
+        "Wipe with a soft, dry cloth",
+        "Condition twice yearly with a neutral leather cream",
+        "Avoid prolonged direct sunlight"
+      ],
+      "sizing": "Holds A4. 38 cm width × 32 cm height × 16 cm depth.",
+      "origin": "Made in Florence, Italy"
+    },
+    "inStock": true,
+    "featured": true,
+    "createdAt": "2026-01-14T10:00:00.000Z"
+  },
+  {
+    "id": "65d0c9dc-429b-4294-81d3-d2ae0ec64240",
+    "slug": "margaux-silk-slip",
+    "name": "Margaux Silk Slip",
+    "categorySlug": "ready-to-wear",
+    "price": { "amount": 2640, "currency": "EUR", "display": "€ 2,640" },
+    "images": [
+      {
+        "src": "https://images.unsplash.com/photo-1551803091-e20673f15770?auto=format&fit=crop&w=1600&h=2000&q=82",
+        "alt": "Margaux Silk Slip — front",
+        "width": 1600,
+        "height": 2000
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1551803091-e20673f15770?auto=format&fit=crop&w=1600&h=2000&q=82&crop=entropy",
+        "alt": "Margaux Silk Slip — drape detail",
+        "width": 1600,
+        "height": 2000
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1551803091-e20673f15770?auto=format&fit=crop&w=1600&h=2000&q=82&crop=top",
+        "alt": "Margaux Silk Slip — strap detail",
+        "width": 1600,
+        "height": 2000
+      }
+    ],
+    "description": "Bias-cut from heavy-weight Como silk, finished with French seams and a hand-rolled hem. The drape is intentional — the garment is finished to fall, not to flatter.",
+    "details": {
+      "composition": "100% mulberry silk, 22 momme.",
+      "care": [
+        "Dry clean only",
+        "Store on a padded hanger",
+        "Iron on the silk setting through a pressing cloth"
+      ],
+      "sizing": "Bias-cut runs long. Order one size below your usual ready-to-wear size.",
+      "origin": "Cut and sewn in Como, Italy"
+    },
+    "inStock": true,
+    "featured": true,
+    "createdAt": "2026-01-16T10:00:00.000Z"
+  },
+  {
+    "id": "da165783-6d6a-416d-afec-6650b99c632a",
+    "slug": "notte-cashmere-coat",
+    "name": "Notte Cashmere Coat",
+    "categorySlug": "outerwear",
+    "price": { "amount": 5950, "currency": "EUR", "display": "€ 5,950" },
+    "images": [
+      {
+        "src": "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1600&h=2000&q=82",
+        "alt": "Notte Cashmere Coat — front",
+        "width": 1600,
+        "height": 2000
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1600&h=2000&q=82&crop=entropy",
+        "alt": "Notte Cashmere Coat — sleeve detail",
+        "width": 1600,
+        "height": 2000
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1600&h=2000&q=82&crop=top",
+        "alt": "Notte Cashmere Coat — collar",
+        "width": 1600,
+        "height": 2000
+      }
+    ],
+    "description": "A long, single-breasted coat in pure undyed cashmere, woven on slow looms in Biella. The shoulder is a quiet roped construction; the lining is signed inside.",
+    "details": {
+      "composition": "100% cashmere. Silk-blend lining.",
+      "care": [
+        "Dry clean only",
+        "Brush gently after each wear",
+        "Store in a breathable garment bag"
+      ],
+      "sizing": "True to size with room for layering. Sleeves can be lengthened on request.",
+      "origin": "Woven in Biella, made in Florence, Italy"
+    },
+    "inStock": true,
+    "featured": true,
+    "createdAt": "2026-01-18T10:00:00.000Z"
+  },
+  {
+    "id": "58f307cb-407f-4659-a2c0-ae16ee310ce2",
+    "slug": "solenne-pump-ink",
+    "name": "Solenne Pump, Ink",
+    "categorySlug": "footwear",
+    "price": { "amount": 1890, "currency": "EUR", "display": "€ 1,890" },
+    "images": [
+      {
+        "src": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=1600&h=2000&q=82",
+        "alt": "Solenne Pump, Ink — pair",
+        "width": 1600,
+        "height": 2000
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=1600&h=2000&q=82&crop=entropy",
+        "alt": "Solenne Pump, Ink — heel detail",
+        "width": 1600,
+        "height": 2000
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=1600&h=2000&q=82&crop=bottom",
+        "alt": "Solenne Pump, Ink — sole",
+        "width": 1600,
+        "height": 2000
+      }
+    ],
+    "description": "A 75-millimetre pump cut from polished kidskin, built on a slim Italian last. The shank is hand-shaped; the leather sole is stitched in welt.",
+    "details": {
+      "composition": "Polished kidskin upper. Calfskin lining. Leather sole.",
+      "care": [
+        "Brush with a soft horsehair brush after each wear",
+        "Polish sparingly with a neutral cream",
+        "Insert shoe trees overnight"
+      ],
+      "sizing": "Order your usual European shoe size. Half sizes available on request.",
+      "origin": "Made in the Marche, Italy"
+    },
+    "inStock": true,
+    "featured": true,
+    "createdAt": "2026-01-20T10:00:00.000Z"
+  },
+  {
+    "id": "5d911793-5ba4-4871-b218-f8ede6c22e68",
+    "slug": "aurore-frame-sunglass",
+    "name": "Aurore Frame Sunglass",
+    "categorySlug": "eyewear",
+    "price": { "amount": 690, "currency": "EUR", "display": "€ 690" },
+    "images": [
+      {
+        "src": "https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=1600&h=2000&q=82",
+        "alt": "Aurore Frame Sunglass — front",
+        "width": 1600,
+        "height": 2000
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=1600&h=2000&q=82&crop=entropy",
+        "alt": "Aurore Frame Sunglass — three-quarter",
+        "width": 1600,
+        "height": 2000
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=1600&h=2000&q=82&crop=top",
+        "alt": "Aurore Frame Sunglass — temple detail",
+        "width": 1600,
+        "height": 2000
+      }
+    ],
+    "description": "Hand-polished acetate with a faintly archived silhouette. CR-39 lenses provide a soft, photographic contrast; the temples carry a discreet brass pin.",
+    "details": {
+      "composition": "Italian acetate. CR-39 lenses. Brass pin detail.",
+      "care": [
+        "Clean with a microfibre cloth and lens spray",
+        "Store in the supplied leather case",
+        "Adjust only at a Maison boutique"
+      ],
+      "sizing": "Medium fit. Lens 52 mm, bridge 18 mm, temple 145 mm.",
+      "origin": "Made in Cadore, Italy"
+    },
+    "inStock": true,
+    "featured": true,
+    "createdAt": "2026-01-22T10:00:00.000Z"
+  },
+  {
+    "id": "55904932-7219-4caa-91d6-22935ca93ae7",
+    "slug": "eden-trouser",
+    "name": "The Eden Trouser",
+    "categorySlug": "ready-to-wear",
+    "price": { "amount": 1480, "currency": "EUR", "display": "€ 1,480" },
+    "images": [
+      {
+        "src": "https://images.unsplash.com/photo-1485231183945-fffde7cc051e?auto=format&fit=crop&w=1600&h=2000&q=82",
+        "alt": "The Eden Trouser — front",
+        "width": 1600,
+        "height": 2000
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1485231183945-fffde7cc051e?auto=format&fit=crop&w=1600&h=2000&q=82&crop=entropy",
+        "alt": "The Eden Trouser — pleat detail",
+        "width": 1600,
+        "height": 2000
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1485231183945-fffde7cc051e?auto=format&fit=crop&w=1600&h=2000&q=82&crop=bottom",
+        "alt": "The Eden Trouser — hem",
+        "width": 1600,
+        "height": 2000
+      }
+    ],
+    "description": "A high-waist trouser in dry virgin wool, drawn from our tailoring archive. The single forward pleat is set by hand; the hem is finished without a break.",
+    "details": {
+      "composition": "100% virgin wool. Cupro pocketing.",
+      "care": [
+        "Dry clean only",
+        "Press through a damp cloth on a low setting",
+        "Rest between wears"
+      ],
+      "sizing": "Tailored fit through the seat. Order your usual European size.",
+      "origin": "Made in Florence, Italy"
+    },
+    "inStock": true,
+    "featured": false,
+    "createdAt": "2026-01-24T10:00:00.000Z"
+  },
+  {
+    "id": "9fc96dd5-25cb-4957-ba89-fe79389b0596",
+    "slug": "camille-wool-knit",
+    "name": "Camille Wool Knit",
+    "categorySlug": "accessories",
+    "price": { "amount": 980, "currency": "EUR", "display": "€ 980" },
+    "images": [
+      {
+        "src": "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=1600&h=2000&q=82",
+        "alt": "Camille Wool Knit — front",
+        "width": 1600,
+        "height": 2000
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=1600&h=2000&q=82&crop=entropy",
+        "alt": "Camille Wool Knit — texture",
+        "width": 1600,
+        "height": 2000
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=1600&h=2000&q=82&crop=top",
+        "alt": "Camille Wool Knit — neckline",
+        "width": 1600,
+        "height": 2000
+      }
+    ],
+    "description": "A fine-gauge crewneck in undyed lambswool, knitted slowly on flat machines and linked by hand at the shoulder seams. Built to soften with each wear.",
+    "details": {
+      "composition": "100% lambswool, undyed.",
+      "care": [
+        "Hand wash cold with a wool detergent",
+        "Reshape flat, away from direct heat",
+        "Steam to refresh"
+      ],
+      "sizing": "True to size, with a clean line through the body.",
+      "origin": "Knitted in Scotland, finished in Florence, Italy"
+    },
+    "inStock": true,
+    "featured": false,
+    "createdAt": "2026-01-26T10:00:00.000Z"
+  },
+  {
+    "id": "a368b1c0-b41c-4312-aafc-7eb13c6b524c",
+    "slug": "vesper-evening-glove",
+    "name": "Vesper Evening Glove",
+    "categorySlug": "accessories",
+    "price": { "amount": 540, "currency": "EUR", "display": "€ 540" },
+    "images": [
+      {
+        "src": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1600&h=2000&q=82",
+        "alt": "Vesper Evening Glove — pair",
+        "width": 1600,
+        "height": 2000
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1600&h=2000&q=82&crop=entropy",
+        "alt": "Vesper Evening Glove — stitch detail",
+        "width": 1600,
+        "height": 2000
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1600&h=2000&q=82&crop=top",
+        "alt": "Vesper Evening Glove — cuff",
+        "width": 1600,
+        "height": 2000
+      }
+    ],
+    "description": "Above-the-elbow gloves in fine napa, cut on the bias for a precise close fit. The cuff is finished with a single pearl button at the inside wrist.",
+    "details": {
+      "composition": "Lambskin napa. Silk lining.",
+      "care": [
+        "Wipe gently with a soft cloth",
+        "Allow to air-dry away from heat",
+        "Store flat in tissue"
+      ],
+      "sizing": "Available in 6.5 / 7 / 7.5. Measure across the widest part of the palm.",
+      "origin": "Made in Naples, Italy"
+    },
+    "inStock": true,
+    "featured": false,
+    "createdAt": "2026-01-28T10:00:00.000Z"
+  },
+  {
+    "id": "8567bcb2-102e-449e-8772-3cfb4316cc2b",
+    "slug": "soraya-slip-dress",
+    "name": "Soraya Slip Dress",
+    "categorySlug": "ready-to-wear",
+    "price": { "amount": 2890, "currency": "EUR", "display": "€ 2,890" },
+    "images": [
+      {
+        "src": "https://images.unsplash.com/photo-1485518882345-15568b007407?auto=format&fit=crop&w=1600&h=2000&q=82",
+        "alt": "Soraya Slip Dress — front",
+        "width": 1600,
+        "height": 2000
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1485518882345-15568b007407?auto=format&fit=crop&w=1600&h=2000&q=82&crop=entropy",
+        "alt": "Soraya Slip Dress — drape",
+        "width": 1600,
+        "height": 2000
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1485518882345-15568b007407?auto=format&fit=crop&w=1600&h=2000&q=82&crop=top",
+        "alt": "Soraya Slip Dress — strap",
+        "width": 1600,
+        "height": 2000
+      }
+    ],
+    "description": "A long, columnar slip in liquid satin-back silk, cut on a steep bias. The straps are adjustable through a hidden silk loop; the hem is hand-rolled.",
+    "details": {
+      "composition": "Satin-back silk, 19 momme.",
+      "care": [
+        "Dry clean only",
+        "Hang on a padded hanger",
+        "Avoid direct contact with fragrance"
+      ],
+      "sizing": "Long line — runs true. Order your usual ready-to-wear size.",
+      "origin": "Cut and sewn in Como, Italy"
+    },
+    "inStock": true,
+    "featured": false,
+    "createdAt": "2026-01-30T10:00:00.000Z"
+  }
+]

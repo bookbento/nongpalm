@@ -1,14 +1,26 @@
 'use client';
 
+import Link from 'next/link';
+import Image from 'next/image';
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { SEARCH_INDEX, SUGGESTED_TERMS, RECENT_TERMS } from '@/lib/data';
+import { SUGGESTED_TERMS, RECENT_TERMS } from '@/lib/data';
 
-type SearchOverlayProps = {
+export interface SearchEntry {
+  id: string;
+  slug: string;
+  name: string;
+  category: string;
+  price: string;
+  image: string;
+}
+
+interface SearchOverlayProps {
   open: boolean;
   onClose: () => void;
-};
+  index: SearchEntry[];
+}
 
-export default function SearchOverlay({ open, onClose }: SearchOverlayProps) {
+export default function SearchOverlay({ open, onClose, index }: SearchOverlayProps) {
   const [q, setQ] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -31,12 +43,12 @@ export default function SearchOverlay({ open, onClose }: SearchOverlayProps) {
   const results = useMemo(() => {
     const term = q.trim().toLowerCase();
     if (!term) return [];
-    return SEARCH_INDEX.filter(
+    return index.filter(
       (p) =>
         p.name.toLowerCase().includes(term) ||
-        (p.cat || '').toLowerCase().includes(term)
+        p.category.toLowerCase().includes(term)
     );
-  }, [q]);
+  }, [q, index]);
 
   const showEmpty = q.trim().length === 0;
   const noResults = !showEmpty && results.length === 0;
@@ -120,27 +132,27 @@ export default function SearchOverlay({ open, onClose }: SearchOverlayProps) {
             <div className="md:col-span-5">
               <div className="eyebrow text-ink/55 mb-6">— Featured</div>
               <div className="grid grid-cols-2 gap-5">
-                {SEARCH_INDEX.slice(0, 4).map((p) => (
-                  <button
-                    key={p.id + p.name}
-                    onClick={() =>
-                      setQ(p.name.split(',')[0].split(' ').slice(0, 2).join(' '))
-                    }
+                {index.slice(0, 4).map((p) => (
+                  <Link
+                    key={p.id}
+                    href={`/products/${p.slug}`}
+                    onClick={onClose}
                     className="group text-left"
                   >
-                    <div className="img-zoom aspect-[3/4] bg-cream overflow-hidden">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={p.img}
+                    <div className="img-zoom relative aspect-[3/4] bg-cream overflow-hidden">
+                      <Image
+                        src={p.image}
                         alt={p.name}
-                        className="w-full h-full object-cover"
+                        fill
+                        sizes="(min-width: 768px) 18vw, 45vw"
+                        className="object-cover"
                       />
                     </div>
                     <div className="mt-3">
-                      <div className="eyebrow text-ink/55 text-[10px]">{p.cat}</div>
+                      <div className="eyebrow text-ink/55 text-[10px]">{p.category}</div>
                       <div className="display text-[15px] mt-1 leading-tight">{p.name}</div>
                     </div>
-                  </button>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -167,9 +179,9 @@ export default function SearchOverlay({ open, onClose }: SearchOverlayProps) {
               </button>{' '}
               — or speak with a Personal Shopper.
             </p>
-            <a href="#" className="ui-label btn-line inline-block mt-10">
-              Write to the Maison →
-            </a>
+            <Link href="/collections" onClick={onClose} className="ui-label btn-line inline-block mt-10">
+              Browse all collections →
+            </Link>
           </div>
         )}
 
@@ -180,18 +192,19 @@ export default function SearchOverlay({ open, onClose }: SearchOverlayProps) {
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-8">
               {results.map((p, i) => (
-                <a
-                  key={p.id + '-' + p.name}
-                  href="#collection"
+                <Link
+                  key={p.id}
+                  href={`/products/${p.slug}`}
                   onClick={onClose}
                   className="group"
                 >
                   <div className="img-zoom relative aspect-[3/4] bg-cream overflow-hidden">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={p.img}
+                    <Image
+                      src={p.image}
                       alt={p.name}
-                      className="w-full h-full object-cover"
+                      fill
+                      sizes="(min-width: 768px) 22vw, 45vw"
+                      className="object-cover"
                     />
                     <div className="absolute top-3 left-3 ui-label text-paper mix-blend-difference text-[10px]">
                       N° {String(i + 1).padStart(2, '0')}
@@ -199,14 +212,14 @@ export default function SearchOverlay({ open, onClose }: SearchOverlayProps) {
                   </div>
                   <div className="mt-4 flex items-start justify-between gap-3">
                     <div>
-                      <div className="eyebrow text-ink/55 text-[10px] mb-1">{p.cat}</div>
+                      <div className="eyebrow text-ink/55 text-[10px] mb-1">{p.category}</div>
                       <div className="display text-[16px] leading-tight">{p.name}</div>
                     </div>
                     <div className="display ui-num text-[13px] whitespace-nowrap pt-1 text-ink/75">
                       {p.price}
                     </div>
                   </div>
-                </a>
+                </Link>
               ))}
             </div>
           </>

@@ -1,9 +1,15 @@
 'use client';
 
+import Link from 'next/link';
+import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
-import { COLLECTION } from '@/lib/data';
+import type { Product } from '@/lib/schemas';
 
-export default function Collection() {
+interface CollectionProps {
+  products: Product[];
+}
+
+export default function Collection({ products }: CollectionProps) {
   const railRef = useRef<HTMLDivElement>(null);
   const [progress, setProgress] = useState(0);
 
@@ -71,36 +77,46 @@ export default function Collection() {
         onScroll={onScroll}
         className="h-snap drag-cursor flex gap-6 md:gap-10 overflow-x-auto px-6 md:px-10 pb-2 select-none"
       >
-        {COLLECTION.map((p, i) => (
-          <article
-            key={p.id}
-            className="reveal shrink-0 w-[78vw] md:w-[34vw] lg:w-[26vw]"
-            style={{ transitionDelay: `${i * 60}ms` }}
-          >
-            <div className="img-zoom relative aspect-[3/4] bg-cream">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={p.img}
-                alt={p.name}
-                className="w-full h-full object-cover"
-                draggable={false}
-              />
-              <div className="absolute top-4 left-4 ui-label text-paper mix-blend-difference">
-                N° {String(i + 1).padStart(2, '0')}
-              </div>
-              <button className="absolute bottom-4 right-4 ui-label text-paper bg-ink/40 backdrop-blur-sm px-4 py-2 hover:bg-ink transition-colors duration-500">
-                Add to Bag
-              </button>
-            </div>
-            <div className="mt-5 flex items-start justify-between gap-4">
-              <div>
-                <div className="eyebrow text-ink/55 mb-1">{p.cat}</div>
-                <div className="display text-[20px] md:text-[22px] leading-tight">{p.name}</div>
-              </div>
-              <div className="display ui-num text-[16px] whitespace-nowrap pt-1">{p.price}</div>
-            </div>
-          </article>
-        ))}
+        {products.map((p, i) => {
+          const cover = p.images[0];
+          return (
+            <article
+              key={p.id}
+              className="reveal shrink-0 w-[78vw] md:w-[34vw] lg:w-[26vw]"
+              style={{ transitionDelay: `${i * 60}ms` }}
+            >
+              <Link href={`/products/${p.slug}`} className="block group">
+                <div className="img-zoom relative aspect-[3/4] bg-cream overflow-hidden">
+                  <Image
+                    src={cover.src}
+                    alt={cover.alt}
+                    fill
+                    sizes="(min-width: 1024px) 26vw, (min-width: 768px) 34vw, 78vw"
+                    className="object-cover"
+                    draggable={false}
+                  />
+                  <div className="absolute top-4 left-4 ui-label text-paper mix-blend-difference">
+                    N° {String(i + 1).padStart(2, '0')}
+                  </div>
+                  <span className="absolute bottom-4 right-4 ui-label text-paper bg-ink/40 backdrop-blur-sm px-4 py-2 group-hover:bg-ink transition-colors duration-500">
+                    View
+                  </span>
+                </div>
+                <div className="mt-5 flex items-start justify-between gap-4">
+                  <div>
+                    <div className="eyebrow text-ink/55 mb-1">
+                      {p.categorySlug.replace(/-/g, ' ')}
+                    </div>
+                    <div className="display text-[20px] md:text-[22px] leading-tight">{p.name}</div>
+                  </div>
+                  <div className="display ui-num text-[16px] whitespace-nowrap pt-1">
+                    {p.price.display}
+                  </div>
+                </div>
+              </Link>
+            </article>
+          );
+        })}
         <div className="shrink-0 w-10" />
       </div>
 
@@ -117,9 +133,9 @@ export default function Collection() {
         <button onClick={() => scrollBy(1)} className="ui-label btn-line">
           Next →
         </button>
-        <a href="#" className="ui-label btn-line hidden md:inline">
-          View All (48)
-        </a>
+        <Link href="/collections" className="ui-label btn-line hidden md:inline">
+          View All →
+        </Link>
       </div>
     </section>
   );
