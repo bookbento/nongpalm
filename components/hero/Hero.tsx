@@ -93,7 +93,7 @@ export default function Hero() {
       </div>
 
       {/* Side rail */}
-      <div className="hidden md:flex absolute z-10 left-10 top-1/2 -translate-y-1/2 flex-col gap-4">
+      {/* <div className="hidden md:flex absolute z-10 left-10 top-1/2 -translate-y-1/2 flex-col gap-4">
         {HERO_SLIDES.map((s, i) => (
           <button
             key={s.id}
@@ -114,7 +114,7 @@ export default function Hero() {
             </span>
           </button>
         ))}
-      </div>
+      </div> */}
 
       {/* Scroll cue */}
       <div className="absolute z-10 bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-paper/80">
