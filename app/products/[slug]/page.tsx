@@ -99,15 +99,15 @@ export default async function ProductDetailPage({ params }: PageProps) {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Maison', item: SITE_URL },
+      { '@type': 'ListItem', position: 1, name: 'Nongpalm', item: SITE_URL },
       { '@type': 'ListItem', position: 2, name: 'Collections', item: `${SITE_URL}/collections` },
       ...(category
         ? [{
-            '@type': 'ListItem',
-            position: 3,
-            name: category.name,
-            item: `${SITE_URL}/collections/${category.slug}`,
-          }]
+          '@type': 'ListItem',
+          position: 3,
+          name: category.name,
+          item: `${SITE_URL}/collections/${category.slug}`,
+        }]
         : []),
       {
         '@type': 'ListItem',
@@ -124,7 +124,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
       <main className="bg-paper text-ink min-h-screen pt-[68px] md:pt-[78px]">
         <Breadcrumb
           items={[
-            { label: 'Maison', href: '/' },
+            { label: 'Nongpalm', href: '/' },
             { label: 'Collections', href: '/collections' },
             ...(category ? [{ label: category.name, href: `/collections/${category.slug}` }] : []),
             { label: product.name },
@@ -158,9 +158,8 @@ export default async function ProductDetailPage({ params }: PageProps) {
                   {product.price.display}
                 </div>
                 <span
-                  className={`ui-label ${
-                    product.inStock ? 'text-ink/65' : 'text-oxblood'
-                  }`}
+                  className={`ui-label ${product.inStock ? 'text-ink/65' : 'text-oxblood'
+                    }`}
                 >
                   {product.inStock ? 'Available' : 'On request'}
                 </span>

@@ -3,7 +3,7 @@ const ITEMS = [
   'Hand-finished in Italy',
   'Limited Editions',
   'Worn for Life',
-  'A Maison, not a House',
+  'A NONGPALM, not a House',
 ];
 
 export default function Marquee() {

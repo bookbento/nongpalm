@@ -11,11 +11,11 @@ import { buildSearchIndex } from '@/lib/search';
 export const metadata: Metadata = {
   title: `Collections — ${SITE_NAME}`,
   description:
-    'Six chapters of the Maison: outerwear, ready-to-wear, leather goods, footwear, eyewear, and accessories. Each finished by a single hand in our Florentine atelier.',
+    'Six chapters of the NONGPALM: outerwear, ready-to-wear, leather goods, footwear, eyewear, and accessories. Each finished by a single hand in our Florentine atelier.',
   alternates: { canonical: '/collections' },
   openGraph: {
     title: `Collections — ${SITE_NAME}`,
-    description: 'Six chapters of the Maison — finished by a single hand.',
+    description: 'Six chapters of the NONGPALM — finished by a single hand.',
     url: '/collections',
     type: 'website',
   },
@@ -40,7 +40,7 @@ export default async function CollectionsPage() {
         categories={navCategories}
       >
         <main className="bg-paper text-ink min-h-screen pt-[68px] md:pt-[78px]">
-          <Breadcrumb items={[{ label: 'Maison', href: '/' }, { label: 'Collections' }]} />
+          <Breadcrumb items={[{ label: 'Nongpalm', href: '/' }, { label: 'Collections' }]} />
 
           <header className="px-6 md:px-10 pt-16 md:pt-24 pb-16 md:pb-24 max-w-5xl">
             <div className="eyebrow text-ink/60 mb-6">— Six chapters · A/W 2026</div>

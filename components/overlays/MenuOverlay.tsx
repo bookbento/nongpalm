@@ -56,7 +56,7 @@ export default function MenuOverlay({ open, onClose, categories }: MenuOverlayPr
           ))}
         </ul>
         <div className="md:col-span-5 md:pt-8">
-          <div className="eyebrow text-paper/55 mb-6">— Maison</div>
+          <div className="eyebrow text-paper/55 mb-6">— NONGPALM</div>
           <ul className="space-y-3 text-[16px] text-paper/85">
             {SECONDARY.map((item) => (
               <li key={item.label}>

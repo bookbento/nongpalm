@@ -46,7 +46,7 @@ export default function Footer() {
 
         <div className="md:col-span-5 grid grid-cols-2 gap-8 md:gap-10 text-paper/80">
           <div>
-            <div className="eyebrow text-paper/50 mb-5">Maison</div>
+            <div className="eyebrow text-paper/50 mb-5">NONGPALM</div>
             <ul className="space-y-3 text-[15px]">
               <li><a className="btn-line" href="#">Our Story</a></li>
               <li><a className="btn-line" href="#">The Atelier</a></li>
@@ -67,7 +67,7 @@ export default function Footer() {
       </div>
 
       <div className="px-6 md:px-10 py-8 border-t border-paper/15 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-paper/55 ui-label">
-        <div>© MMXXVI — Maison Harlowe · Firenze</div>
+        <div>© MMXXVI — NONGPALM Harlowe · Firenze</div>
         <div className="flex items-center gap-8">
           <a className="btn-line" href="#">Instagram</a>
           <a className="btn-line" href="#">Journal</a>

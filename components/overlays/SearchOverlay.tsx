@@ -62,7 +62,7 @@ export default function SearchOverlay({ open, onClose, index }: SearchOverlayPro
       }`}
     >
       <div className="flex items-center justify-between px-6 md:px-10 h-[68px] md:h-[78px] border-b border-ink/10">
-        <span className="ui-label">— Search the Maison</span>
+        <span className="ui-label">— Search the NONGPALM</span>
         <button onClick={onClose} className="ui-label btn-line">
           Close ✕
         </button>
@@ -188,7 +188,7 @@ export default function SearchOverlay({ open, onClose, index }: SearchOverlayPro
         {!showEmpty && results.length > 0 && (
           <>
             <div className="ui-label text-ink/55 mb-8">
-              {results.length} {results.length === 1 ? 'piece' : 'pieces'} in the Maison
+              {results.length} {results.length === 1 ? 'piece' : 'pieces'} in the NONGPALM
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-8">
               {results.map((p, i) => (

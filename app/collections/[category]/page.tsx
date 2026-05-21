@@ -92,7 +92,7 @@ export default async function CategoryDetailPage({ params }: PageProps) {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Maison', item: SITE_URL },
+      { '@type': 'ListItem', position: 1, name: 'Nongpalm', item: SITE_URL },
       { '@type': 'ListItem', position: 2, name: 'Collections', item: `${SITE_URL}/collections` },
       {
         '@type': 'ListItem',
@@ -110,7 +110,7 @@ export default async function CategoryDetailPage({ params }: PageProps) {
         <CategoryHero category={category} productCount={products.length} />
         <Breadcrumb
           items={[
-            { label: 'Maison', href: '/' },
+            { label: 'Nongpalm', href: '/' },
             { label: 'Collections', href: '/collections' },
             { label: category.name },
           ]}

@@ -10,7 +10,7 @@ export default function ProductNotFound() {
           <br /> has been retired.
         </h1>
         <p className="mt-8 ui-label text-ink/65 max-w-md mx-auto">
-          The garment you requested is no longer in the Maison&apos;s active catalogue.
+          The garment you requested is no longer in the NONGPALM&apos;s active catalogue.
         </p>
         <Link href="/collections" className="ui-label btn-line inline-block mt-12">
           ← Return to Collections
