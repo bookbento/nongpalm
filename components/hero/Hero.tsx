@@ -50,7 +50,7 @@ export default function Hero() {
       </div>
 
       {/* Centered headline */}
-      <div className="absolute inset-0 z-10 flex flex-col justify-end pb-[18vh] md:pb-[16vh] px-6 md:px-10">
+      <div className="absolute inset-0 z-10 flex flex-col justify-end pb-[18vh] md:pb-[14vh] px-6 md:px-10">
         <div className="eyebrow text-paper/80 mb-6">— {slide.chapter}</div>
         <div
           key={slide.id}
