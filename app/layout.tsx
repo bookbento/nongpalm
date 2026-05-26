@@ -20,8 +20,12 @@ const jost = Jost({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
+  icons: {
+    icon: '/logo.png',
+    apple: '/logo.png',
+  },
   title: {
-    default: `${SITE_NAME} — Florentine atelier, est. 1962`,
+    default: `${SITE_NAME} — Furniture Handmade`,
     template: `%s`,
   },
   description: SITE_DESCRIPTION,

@@ -5,19 +5,6 @@ interface ProductGridProps {
   products: Product[];
 }
 
-const layoutSlots: Array<{
-  span: string;
-  aspect: '3/4' | '4/5' | '1/1';
-  offsetY?: string;
-}> = [
-  { span: 'md:col-span-7', aspect: '4/5' },
-  { span: 'md:col-span-5', aspect: '3/4', offsetY: 'md:mt-32' },
-  { span: 'md:col-span-5', aspect: '3/4' },
-  { span: 'md:col-span-7', aspect: '4/5', offsetY: 'md:mt-16' },
-  { span: 'md:col-span-6', aspect: '1/1' },
-  { span: 'md:col-span-6', aspect: '4/5', offsetY: 'md:mt-24' },
-];
-
 export default function ProductGrid({ products }: ProductGridProps) {
   if (products.length === 0) {
     return (
@@ -30,20 +17,16 @@ export default function ProductGrid({ products }: ProductGridProps) {
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-12 gap-x-6 md:gap-x-10 gap-y-20 md:gap-y-32 px-6 md:px-10">
-      {products.map((product, i) => {
-        const slot = layoutSlots[i % layoutSlots.length];
-        return (
-          <div key={product.id} className={`${slot.span} ${slot.offsetY ?? ''}`}>
-            <ProductCard
-              product={product}
-              index={i}
-              variant="grid"
-              aspect={slot.aspect}
-            />
-          </div>
-        );
-      })}
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-x-4 md:gap-x-8 gap-y-10 md:gap-y-16 px-6 md:px-10">
+      {products.map((product, i) => (
+        <ProductCard
+          key={product.id}
+          product={product}
+          index={i}
+          variant="grid"
+          aspect="3/4"
+        />
+      ))}
     </div>
   );
 }
