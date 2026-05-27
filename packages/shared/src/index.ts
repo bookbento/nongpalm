@@ -6,7 +6,7 @@ export {
   categorySchema,
   productCreateSchema,
   productUpdateSchema,
-} from '@harlowe/shared';
+} from './schemas';
 
 export type {
   ProductImage,
@@ -16,4 +16,4 @@ export type {
   Category,
   ProductCreateInput,
   ProductUpdateInput,
-} from '@harlowe/shared';
+} from './schemas';
