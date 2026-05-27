@@ -7,8 +7,8 @@ on:
     branches: [main]
 
 jobs:
-  check:
-    name: Type Check & Build
+  build:
+    name: Type Check & Build (web + api)
     runs-on: ubuntu-latest
 
     steps:
@@ -21,11 +21,18 @@ jobs:
           node-version: 24
           cache: pnpm
 
+      # postinstall builds @harlowe/shared so both apps can import it.
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Type check
-        run: pnpm tsc --noEmit
+      # Prisma Client must be generated from the schema before the API type-checks.
+      - name: Generate Prisma Client
+        run: pnpm --filter api prisma:generate
 
-      - name: Build
-        run: pnpm build
+      # Builds run tsc internally, so this covers type-checking too.
+      # Web builds with the bundled JSON data source — no DB/API needed in CI.
+      - name: Build web
+        run: pnpm --filter web build
+
+      - name: Build api
+        run: pnpm --filter api build
