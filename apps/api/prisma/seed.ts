@@ -36,6 +36,7 @@ async function main(): Promise<void> {
       images: p.images,
       description: p.description,
       details: p.details,
+      channels: p.channels,
       inStock: p.inStock,
       featured: p.featured,
       createdAt: new Date(p.createdAt),

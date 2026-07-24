@@ -1,4 +1,5 @@
 import { productRepo, categoryRepo } from '@/lib/repositories';
+import { formatPrice } from '@/lib/schemas';
 import type { SearchEntry } from '@/components/overlays/SearchOverlay';
 
 export async function buildSearchIndex(): Promise<SearchEntry[]> {
@@ -13,7 +14,7 @@ export async function buildSearchIndex(): Promise<SearchEntry[]> {
     slug: p.slug,
     name: p.name,
     category: categoryName.get(p.categorySlug) ?? p.categorySlug,
-    price: p.price.display,
+    price: formatPrice(p.price),
     image: p.images[0].src,
   }));
 }

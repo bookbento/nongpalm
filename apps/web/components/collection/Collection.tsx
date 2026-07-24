@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
-import type { Product } from '@/lib/schemas';
+import { formatPrice, type Product } from '@/lib/schemas';
 
 interface CollectionProps {
   products: Product[];
@@ -110,7 +110,7 @@ export default function Collection({ products }: CollectionProps) {
                     <div className="display text-[20px] md:text-[22px] leading-tight">{p.name}</div>
                   </div>
                   <div className="display ui-num text-[16px] whitespace-nowrap pt-1">
-                    {p.price.display}
+                    {formatPrice(p.price)}
                   </div>
                 </div>
               </Link>

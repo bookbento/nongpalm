@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import type { Product } from '@/lib/schemas';
+import { formatPrice, type Product } from '@/lib/schemas';
 
 type Variant = 'rail' | 'grid' | 'feature';
 
@@ -64,7 +64,7 @@ export default function ProductCard({
             <div className={`display ${titleSize} leading-tight`}>{product.name}</div>
           </div>
           <div className="display ui-num text-[15px] whitespace-nowrap pt-1 text-ink/75">
-            {product.price.display}
+            {formatPrice(product.price)}
           </div>
         </div>
       </Link>

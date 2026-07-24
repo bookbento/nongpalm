@@ -1,15 +1,28 @@
 export {
+  CURRENCIES,
+  CHANNELS,
   productImageSchema,
+  currencySchema,
   priceSchema,
+  channelSchema,
+  purchaseChannelSchema,
+  purchaseChannelsSchema,
   productDetailsSchema,
   productSchema,
   categorySchema,
   productCreateSchema,
   productUpdateSchema,
+  formatPrice,
+  CHANNEL_LABELS,
+  primaryChannel,
+  secondaryChannels,
 } from '@harlowe/shared';
 
 export type {
   ProductImage,
+  Currency,
+  Channel,
+  PurchaseChannel,
   ProductPrice,
   ProductDetails,
   Product,

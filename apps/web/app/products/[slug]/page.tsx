@@ -2,12 +2,14 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { categoryRepo, productRepo } from '@/lib/repositories';
+import { formatPrice, primaryChannel } from '@/lib/schemas';
 import { SITE_NAME, SITE_URL } from '@/lib/site';
 import { buildSearchIndex } from '@/lib/search';
 import SiteChrome from '@/components/layout/SiteChrome';
 import Footer from '@/components/footer/Footer';
 import Breadcrumb from '@/components/ui/Breadcrumb';
 import ProductGallery from '@/components/product/ProductGallery';
+import PurchaseChannels from '@/components/product/PurchaseChannels';
 import ShareButton from '@/components/product/ShareButton';
 import RelatedRail from '@/components/product/RelatedRail';
 import JsonLd from '@/components/ui/JsonLd';
@@ -75,6 +77,11 @@ export default async function ProductDetailPage({ params }: PageProps) {
   const navCategories = allCategories.map((c) => ({ slug: c.slug, name: c.name }));
   const relatedFiltered = related.filter((p) => p.id !== product.id).slice(0, 6);
 
+  // The Offer should point customers where they can actually buy. Fall back to
+  // the canonical product page when no channel is listed yet.
+  const buyChannel = primaryChannel(product.channels);
+  const offerUrl = buyChannel?.url ?? `${SITE_URL}/products/${product.slug}`;
+
   const productJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Product',
@@ -86,7 +93,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
     brand: { '@type': 'Brand', name: SITE_NAME },
     offers: {
       '@type': 'Offer',
-      url: `${SITE_URL}/products/${product.slug}`,
+      url: offerUrl,
       priceCurrency: product.price.currency,
       price: product.price.amount,
       availability: product.inStock
@@ -155,7 +162,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
 
               <div className="mt-8 flex items-baseline gap-6">
                 <div className="display ui-num text-[28px] md:text-[32px]">
-                  {product.price.display}
+                  {formatPrice(product.price)}
                 </div>
                 <span
                   className={`ui-label ${product.inStock ? 'text-ink/65' : 'text-oxblood'
@@ -169,13 +176,11 @@ export default async function ProductDetailPage({ params }: PageProps) {
                 {product.description}
               </p>
 
-              <div className="mt-12 flex flex-wrap items-center gap-x-10 gap-y-6">
-                <button
-                  type="button"
-                  className="ui-label bg-ink text-paper px-8 py-4 hover:bg-ink/85 transition-colors"
-                >
-                  Add to Bag
-                </button>
+              <div className="mt-12 space-y-8">
+                <PurchaseChannels
+                  channels={product.channels}
+                  productName={product.name}
+                />
                 <ShareButton
                   url={`/products/${product.slug}`}
                   title={`${product.name} — ${SITE_NAME}`}

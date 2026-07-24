@@ -29,6 +29,7 @@ model Product {
   images       Json
   description  String
   details      Json
+  channels     Json     @default("[]")
   inStock      Boolean  @default(true) @map("in_stock")
   featured     Boolean  @default(false)
   createdAt    DateTime @default(now()) @map("created_at")

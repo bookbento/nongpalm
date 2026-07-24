@@ -199,3 +199,34 @@ Accessibility:
 - Avoid cluttered dashboards unless explicitly requested
 
 The final result should feel closer to a luxury fashion campaign website than a typical corporate website.
+
+---
+
+# Infrastructure & Hosting Plan
+
+Planned production infrastructure (decided, not yet fully implemented):
+
+## Image Storage — Cloudflare R2
+
+- All product/editorial image **files** are stored in **Cloudflare R2** (S3-compatible object storage), served through R2's CDN with a custom domain.
+- Chosen because R2 has **zero egress fees**, which suits an image-heavy fashion site with read-heavy traffic.
+- **Never store image binaries/base64 in the database.** The DB stores only image **references** (object key/URL) plus metadata (`alt`, `width`, `height`) — keep `width`/`height` to prevent layout shift (CLS).
+- Serve optimized formats (**AVIF/WebP**) in multiple sizes via Next.js `<Image>` with `remotePatterns` pointing at the R2 domain. Never serve source-resolution originals.
+
+## Deployment — Railway
+
+- **Railway** hosts the compute: the **NestJS API** (`apps/api`) and the **Next.js web app** (`apps/web`).
+- Railway is **not** used to serve image files — that is R2's job.
+
+## Database — Supabase (PostgreSQL)
+
+- Production Postgres is hosted on **Supabase**.
+- Prisma connects via `DATABASE_URL` (pooled) and `DIRECT_URL` (direct, for migrations) — the schema already declares both.
+
+## Responsibility split
+
+```
+Railway   → NestJS API + Next.js web (compute)
+Supabase  → PostgreSQL (data, image references only)
+R2        → image files (storage + CDN, free egress)
+```

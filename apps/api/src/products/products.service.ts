@@ -1,6 +1,7 @@
 import {
   BadRequestException,
   Injectable,
+  Logger,
   NotFoundException,
 } from '@nestjs/common';
 import { Prisma, type Product as PrismaProduct } from '@prisma/client';
@@ -19,7 +20,37 @@ export interface FindAllOptions {
 
 @Injectable()
 export class ProductsService {
+  private readonly logger = new Logger(ProductsService.name);
+
   constructor(private readonly prisma: PrismaService) {}
+
+  /**
+   * Best-effort on-demand revalidation of the storefront after a write. Fires
+   * the web app's /api/revalidate hook so edits go live immediately instead of
+   * waiting out ISR. Never throws — a revalidation failure must not fail the
+   * write. No-op unless both WEB_URL and REVALIDATE_SECRET are configured.
+   */
+  private async revalidateStorefront(payload: {
+    slug?: string;
+    categorySlug?: string;
+  }): Promise<void> {
+    const webUrl = process.env.WEB_URL;
+    const secret = process.env.REVALIDATE_SECRET;
+    if (!webUrl || !secret) return;
+
+    try {
+      await fetch(`${webUrl.replace(/\/$/, '')}/api/revalidate`, {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+          'x-revalidate-secret': secret,
+        },
+        body: JSON.stringify(payload),
+      });
+    } catch (error) {
+      this.logger.warn(`Storefront revalidation failed: ${String(error)}`);
+    }
+  }
 
   /**
    * Prisma types Json columns as JsonValue and createdAt as Date. Re-validate
@@ -35,6 +66,7 @@ export class ProductsService {
       images: row.images,
       description: row.description,
       details: row.details,
+      channels: row.channels,
       inStock: row.inStock,
       featured: row.featured,
       createdAt: row.createdAt.toISOString(),
@@ -86,11 +118,17 @@ export class ProductsService {
           images: input.images,
           description: input.description,
           details: input.details,
+          channels: input.channels,
           inStock: input.inStock,
           featured: input.featured,
         },
       });
-      return this.toProduct(row);
+      const product = this.toProduct(row);
+      await this.revalidateStorefront({
+        slug: product.slug,
+        categorySlug: product.categorySlug,
+      });
+      return product;
     } catch (error) {
       throw this.mapWriteError(error, input.slug);
     }
@@ -108,11 +146,17 @@ export class ProductsService {
           images: patch.images,
           description: patch.description,
           details: patch.details,
+          channels: patch.channels,
           inStock: patch.inStock,
           featured: patch.featured,
         },
       });
-      return this.toProduct(row);
+      const product = this.toProduct(row);
+      await this.revalidateStorefront({
+        slug: product.slug,
+        categorySlug: product.categorySlug,
+      });
+      return product;
     } catch (error) {
       throw this.mapWriteError(error, id);
     }
@@ -120,7 +164,17 @@ export class ProductsService {
 
   async delete(id: string): Promise<void> {
     try {
+      // Capture identifiers before removal so the storefront can revalidate
+      // the exact product and collection pages that just changed.
+      const existing = await this.prisma.product.findUnique({
+        where: { id },
+        select: { slug: true, categorySlug: true },
+      });
       await this.prisma.product.delete({ where: { id } });
+      await this.revalidateStorefront({
+        slug: existing?.slug,
+        categorySlug: existing?.categorySlug,
+      });
     } catch (error) {
       throw this.mapWriteError(error, id);
     }

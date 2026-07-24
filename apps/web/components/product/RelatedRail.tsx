@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import type { Product } from '@/lib/schemas';
+import { formatPrice, type Product } from '@/lib/schemas';
 
 interface RelatedRailProps {
   products: Product[];
@@ -64,7 +64,7 @@ export default function RelatedRail({
                   <div className="display text-[17px] leading-tight">{product.name}</div>
                 </div>
                 <div className="display ui-num text-[13px] whitespace-nowrap pt-1 text-ink/70">
-                  {product.price.display}
+                  {formatPrice(product.price)}
                 </div>
               </div>
             </Link>
